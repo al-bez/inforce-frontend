@@ -13,14 +13,19 @@ const useNavigation = (
   const history = useHistory()
   const [pathname, setPathname] = React.useState<string>(location.pathname)
 
+  const navigate = () => {
+    history.push(`${pathname}#${target}`)
+  }
+
   useEffect(() => {
+    setPathname(location.pathname)
     if (locations && locations.includes(location.pathname)) {
       setPathname(defaultPathname)
     }
   }, [location, locations])
 
   return {
-    navigate: () => history.push(`${pathname}#${target}`),
+    navigate,
     location,
     history,
   }
