@@ -1,0 +1,26 @@
+{
+  "short_name": "inforce",
+  "name": "Inforce company, lviv",
+  "description": "Inforce turns your business idea into a launched product by guiding your journey & customizing the development to meet your goals",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logobig.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "inforce-logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

@@ -1,0 +1,66 @@
+{
+  "general": {
+    "title": "inforce",
+    "email": " info@inforce.digital",
+    "slider": {
+      "header": "We are proud to work with truly innovative clients. Here are just a few of the companies we’ve had the privilege to work with."
+    }
+  },
+  "button": {
+    "consultation": "free consultation"
+  },
+  "cards": {
+    "sixpack": {
+      "1": "Web Applications Development",
+      "2": "Mobile Applications Development",
+      "3": "Quality Assurance",
+      "4": "IT Ouststaffing & Outsourcing",
+      "5": "Online Marketing and SEO optimization",
+      "6": "Product Design"
+    },
+    "threepack": {
+      "1": "Every decision we make is guided by rules that we can follow and understand. Every problem has an engineering solution. Every opinion can be either true or false. \n \n By continuously asking questions and debating different ideas we actually go into philosophical debates. We aim to uncover the final reason of things - the root cause. Of course, sometimes we just try to persuade the other side to believe the same as us but those conversations are not truly debates.",
+      "2": "Building a product is more than just designing it. The process considers the product’s competition and relative position, the product business model, and the messaging and marketing that we use to help you plan out what to build and when.",
+      "3": "Is your software project on the brink of collapse? Not getting the results you expected? Way behind schedule? \n \n Don’t panic. We can rescue your software project and make it a success. We won’t stop until your project is back on track."
+    },
+    "fourpack": {
+      "1": "To Bring your Ideas to smooth, robust and scalable SoftWare",
+      "2": "To establish the best possible User Experience for your Product or to improve the existing one",
+      "3": "To get the best SoftWare Development Process Experience with our top-notch Engineers",
+      "4": "To Grow your Business Online"
+    }
+  },
+  "form": {
+    "desc": "Any questions/requests? Leave a message and expect a promplty repsonse from us"
+  },
+  "main": {
+    "strategy": {
+      "fast": "Our experienced Engineers use the most recent Frameworks to deliver seamless results on time",
+      "reliable": "Following the Market, Software and Community conventions we deliver SoftWare that can be used and easily supported for the years ahead",
+      "scalable": "For Businesses that have changing demands, we offer scalable software to support your growth",
+      "friendly": "Intuitive navigation, concise content, and strategic use of visuals. No confusing features or functionality. Trully seamless experience"
+    },
+    "slider": {
+      "header": "Here you can find our previous projects. Feel free to reach out if ou have any questions or if you want something simillar"
+    }
+  },
+  "about": {
+    "description": "We are here to provide you with top-notch Software sollutions and help you reach your Business Goals! Inforce is an independent IT agency in Lviv, Ukraine with a non-traditional perspective. We offer full-cycle Software development cycle",
+    "principles": "To achieve the best results for your business we first try to understand it better to provide you with on-point software sollutions!",
+    "market": "For the past 5 years we delivered over 100 projects. We have done a large variety of projects: from simple landing pages to huge multiplatform systems. They've been mobile apps, websites and smartwatch applications. Meet the greatest and brightest in our special section.  We would be happy to deliver the best sollutions and create another one story of success!"
+  },
+  "process": {
+    "planning": "We established a process that aims to improve software delivery predictability and includes requirements gathering, planning and designing the product; research and development into the areas that are unknowns or risks to the project."
+  },
+  "cookie": {
+    "s1p1": "This Policy explains how we protect and handle any personal information you provide to us, including via our websites, our apps, our social media pages/accounts, email, telephone and in person. It also covers any personal information we receive from third parties and provides you with an overview of your rights.",
+    "s1p2": "By using our products and services, including browsing our websites, registering, logging in or signing up for marketing, you agree that we may use your personal information as outlined in this Policy. There may be occasions when we share responsibility for the processing and protection of your personal data.",
+    "s2p1": "Cookies are small pieces of text sent to your web browser by a website you visit. A cookie file is stored in your web browser and allows the Service or a third-party to recognize you and make your next visit easier and the Service more useful to you.",
+    "s2p2": "Cookies can be &quot;persistent&quot; or &quot;session&quot; cookies. Persistent cookies remain on your personal computer or mobile device when you go offline, while session cookies are deleted as soon as you close your web browser.",
+    "s3p1": "We use different types of cookies for different things, such as: Analysing how you use the site Giving you a better, more personalised experience Recognising when you’ve signed in ",
+    "s3p2": "These cookies let you use all the different parts of the website. Without them, services that you’ve asked for can’t be provided. Also, as a public service, we collect data from you to help us understand how people are using the site online, so we can make it better."
+  },
+  "footer": {
+    "copyright": "Copyright © 2022 Inforce Inc. All rights reserved"
+  }
+}
