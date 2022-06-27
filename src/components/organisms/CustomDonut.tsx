@@ -300,6 +300,7 @@ const useStyles = makeStyles((theme: MTheme) => ({
   },
   subtitle: {
     ...theme.typography.body1,
+    color: '#161616',
     wordBreak: 'normal',
     fontWeight: theme.typography.fontWeightRegular,
     [theme.breakpoints.down('sm')]: {
@@ -309,6 +310,7 @@ const useStyles = makeStyles((theme: MTheme) => ({
   },
   number: {
     ...theme.typography.h3,
+    color: '#161616',
     textAlign: 'center',
     [theme.breakpoints.down('sm')]: {
       fontSize: pxToRem(18),

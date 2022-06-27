@@ -3,7 +3,7 @@ import { makeStyles } from '@mui/styles'
 import { capitalize } from '@mui/material/utils'
 import Button, { ButtonProps } from '@mui/material/Button'
 import clsx from 'clsx'
-import { MTheme } from 'theme'
+import { MTheme, useThemeContext } from 'theme'
 import { ClassNameMap } from '@mui/styles'
 
 const useStyles = makeStyles((theme: MTheme) => {
@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme: MTheme) => {
     padding: theme.spacing(2, 3),
     fontSize: theme.spacing(2.25),
     lineHeight: theme.spacing(2.625),
-    boxShadow: 'none',
+    // boxShadow: 'none',
     borderRadius: theme.spacing(1),
     '&:hover': {
       backgroundColor: theme.palette[color].main,
@@ -47,8 +47,11 @@ const MButton = ({
 }: Partial<IMButton>) => {
   const classes: TClasses = useStyles({ color })
 
+  const { isDarkMode } = useThemeContext()
+
   return (
     <Button
+      style={isDarkMode ? { color: '#fff' } : undefined}
       color={color}
       variant={variant}
       className={clsx(classes[`${variant}${capitalize(color)}`], className)}
