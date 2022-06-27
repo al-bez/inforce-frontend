@@ -5,7 +5,7 @@ import { MTheme } from 'theme'
 
 const useStyles = makeStyles((theme: MTheme) => ({
   card: {
-    backgroundColor: theme.palette.primary.light,
+    backgroundColor: theme.palette.background.default,
     color: theme.palette.text.primary,
     borderRadius: theme.shape.borderRadiusMd,
     padding: theme.spacing(2),

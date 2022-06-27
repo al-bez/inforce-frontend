@@ -31,6 +31,7 @@ const useStyles = makeStyles((theme: MTheme) => ({
   header: ({ bgColor }: IHeaderStyles) => ({
     position: 'fixed',
     top: 0,
+    // backgroundColor: theme.palette[bgColor].main, default theme
     backgroundColor: theme.palette[bgColor].main,
   }),
   flex: {

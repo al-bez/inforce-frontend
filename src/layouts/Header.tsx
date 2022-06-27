@@ -3,14 +3,16 @@ import { Link, NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import clsx from 'clsx'
 import { makeStyles } from '@mui/styles'
-import { Typography, List } from '@mui/material'
+import { Typography, List, IconButton } from '@mui/material'
 import Box, { BoxProps } from '@mui/material/Box'
+import Brightness4Icon from '@mui/icons-material/Brightness4'
+import LightModeIcon from '@mui/icons-material/LightMode'
 import Drawer from '@mui/material/Drawer'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { useTheme } from '@mui/material/styles'
 import { MButton } from '@atoms'
 import { useNavigation } from 'hooks'
-import { MTheme } from 'theme'
+import { MTheme, useThemeContext } from 'theme'
 import { InforceLogoDark, InforceLogoLight } from '../assets/icons'
 
 export type THeaderType = 'primary' | 'secondary'
@@ -90,7 +92,9 @@ const useStyles = makeStyles((theme: MTheme) => ({
         display: 'flex',
         flexDireection: 'row',
         alignItems: 'center',
-
+        '& .MuiIconButton-root': {
+          margin: '0 0 0 10px',
+        },
         '& > a': {
           color: 'inherit',
           textDecoration: 'none',
@@ -119,6 +123,9 @@ const useStyles = makeStyles((theme: MTheme) => ({
             marginRight: 0,
             padding: theme.spacing(1, 2),
           },
+          // '& .MuiIconButton-root': {
+          //   margin: 'auto',
+          // },
           '& > .MuiButton-root': {
             margin: '16px auto',
             color: theme.palette.primary.light,
@@ -136,7 +143,7 @@ const Header = ({ bgColor, className, ...props }: IHeader): JSX.Element => {
   const { navigate, location } = useNavigation('consultation-form', ['/cookie'])
   const [open, setOpen] = React.useState<boolean>(false)
   const { t } = useTranslation()
-
+  const { isDarkMode, toggleTheme } = useThemeContext()
   const classes = useStyles({ bgColor })
 
   const toggleDrawer = (state: boolean) => {
@@ -176,6 +183,13 @@ const Header = ({ bgColor, className, ...props }: IHeader): JSX.Element => {
         <MButton color={bgColor} variant="contained" onClick={navigate}>
           {t('button.consultation')}
         </MButton>
+        <IconButton onClick={toggleTheme}>
+          {isDarkMode ? (
+            <LightModeIcon style={{ color: '#fff' }} />
+          ) : (
+            <Brightness4Icon />
+          )}
+        </IconButton>
       </List>
     </Box>
   )
@@ -183,7 +197,13 @@ const Header = ({ bgColor, className, ...props }: IHeader): JSX.Element => {
   return (
     <Box className={clsx(classes.header, className)} {...props}>
       <Link to="/">
-        {bgColor === 'secondary' ? <InforceLogoLight /> : <InforceLogoDark />}
+        {isDarkMode ? (
+          <InforceLogoLight />
+        ) : bgColor === 'secondary' ? (
+          <InforceLogoLight />
+        ) : (
+          <InforceLogoDark />
+        )}
       </Link>
       <div>
         <React.Fragment>
