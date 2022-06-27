@@ -5,19 +5,14 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import { useTranslation } from 'react-i18next'
 // assets
-import {
-  InforceLogoDark,
-  LinkedInIcon,
-  InstagramIcon,
-  СlutchIcon,
-} from '../assets/icons'
+import { InforceLogoDark, LinkedInIcon, СlutchIcon } from '../assets/icons'
 import { MTheme } from 'theme'
 
 const useStyles = makeStyles((theme: MTheme) => ({
   root: {
     width: '100%',
     background: theme.palette.primary.main,
-    padding: theme.spacing(3.625, 16),
+    padding: theme.spacing(1.8, 16),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'start',
@@ -36,11 +31,10 @@ const useStyles = makeStyles((theme: MTheme) => ({
     },
   },
   section: {
-    width: 555,
+    width: '600px',
     display: 'flex',
-    alignItems: 'center',
     justifyContent: 'space-between',
-
+    alignItems: 'center',
     '&:not(:last-child)': {
       marginBottom: theme.spacing(2),
     },
@@ -53,14 +47,9 @@ const useStyles = makeStyles((theme: MTheme) => ({
   },
 
   logoBlock: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'flex-start',
+    margin: '0 10px 5px 0',
     color: theme.palette.primary.light,
-    marginBottom: theme.spacing(3.625),
-
     '& > a > svg': {
-      marginBottom: theme.spacing(3.625),
       '& path:not(:nth-of-type(3n))': {
         fill: theme.palette.primary.light,
       },
@@ -70,8 +59,7 @@ const useStyles = makeStyles((theme: MTheme) => ({
     },
 
     [theme.breakpoints.down('sm-large')]: {
-      marginBottom: theme.spacing(2),
-
+      margin: 'auto',
       '& > a > svg': {
         marginBottom: theme.spacing(2),
       },
@@ -80,6 +68,7 @@ const useStyles = makeStyles((theme: MTheme) => ({
   social: {
     display: 'flex',
     alignItems: 'center',
+    color: theme.palette.primary.light,
 
     '& > a': {
       cursor: 'pointer',
@@ -89,29 +78,32 @@ const useStyles = makeStyles((theme: MTheme) => ({
     },
 
     [theme.breakpoints.down('sm-large')]: {
-      marginBottom: theme.spacing(2),
+      margin: 'auto',
     },
   },
   navigationBlock: {
-    width: 'fit-content',
+    width: '100%',
     color: theme.palette.primary.light,
-    display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)',
-    gridTemplateRows: 'repeat(2, 1fr)',
-    gridAutoFlow: 'column',
-    gridRowGap: theme.spacing(3.625),
-    gridColumnGap: theme.spacing(5),
-
-    [theme.breakpoints.down('sm-large')]: {
-      gridRowGap: theme.spacing(2),
-      gridColumnGap: theme.spacing(2),
-    },
+    display: 'flex',
+    justifyContent: 'space-around',
     '& > .MuiTypography-root': {
       cursor: 'pointer',
 
       '& > a': {
         color: 'inherit',
         textDecoration: 'none',
+      },
+    },
+    [theme.breakpoints.down('sm-large')]: {
+      display: 'grid',
+      gridTemplateRows: '1fr 1fr',
+      gridTemplateColumns: '1fr 1fr',
+      // flexDirection: 'column',
+
+      // alignItems: 'center',
+      '& h6': {
+        margin: '0 0 5px 0',
+        textAlign: 'center',
       },
     },
   },
@@ -128,7 +120,6 @@ const Footer = () => {
           <Link to="/">
             <InforceLogoDark />
           </Link>
-          <Typography variant="subtitle1">{t('general.email')}</Typography>
         </Box>
         <Box className={classes.navigationBlock}>
           <Typography variant="subtitle2">
@@ -155,13 +146,6 @@ const Footer = () => {
       <Box className={classes.section}>
         <Box className={classes.social}>
           <a
-            href="https://instagram.com/inforce_ua?igshid=YmMyMTA2M2Y="
-            rel="noreferrer"
-            target="_blank"
-          >
-            <InstagramIcon />
-          </a>
-          <a
             href="https://www.linkedin.com/company/inforce-digital/mycompany/"
             rel="noreferrer"
             target="_blank"
@@ -175,15 +159,19 @@ const Footer = () => {
           >
             <СlutchIcon />
           </a>
+          <Typography variant="subtitle1">
+            <a href="mailto:info@inforce.digital">{t('general.email')}</a>
+          </Typography>
         </Box>
-        <Typography
-          color="primary.light"
-          variant="subtitle1"
-          sx={{ textAlign: 'center' }}
-        >
-          {t('footer.copyright')}
-        </Typography>
       </Box>
+      <Typography
+        style={{ margin: 'auto' }}
+        color="primary.light"
+        variant="subtitle1"
+        sx={{ textAlign: 'center' }}
+      >
+        {t('footer.copyright')}
+      </Typography>
     </Box>
   )
 }
