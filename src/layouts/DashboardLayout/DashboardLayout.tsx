@@ -68,6 +68,7 @@ function Dashboard({ children }: IDashboard) {
     <Box ref={ref} className={classes.root}>
       <IdNavigator />
       <Header
+        // style={isSticky ? { height: '80px' } : undefined}
         bgColor={bgColor}
         className={clsx(
           isSticky && classes.header,
