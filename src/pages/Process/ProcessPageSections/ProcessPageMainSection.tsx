@@ -1,9 +1,7 @@
 import React from 'react'
 import { makeStyles } from '@mui/styles'
 import { Grid, Box } from '@mui/material'
-import { MButton } from '@atoms'
-import { GhostHeaderBox, TextBlockWithHeader, FiveStarCard } from '@molecules'
-import { useNavigation } from 'hooks'
+import { GhostHeaderBox, TextBlockWithHeader } from '@molecules'
 import { MTheme } from 'theme'
 import {
   DrawingIcon,
@@ -12,11 +10,6 @@ import {
 } from '../../../assets/icons'
 
 const useStyles = makeStyles((theme: MTheme) => ({
-  starCardBox: {
-    maxWidth: theme.spacing(62.75),
-    borderRadius: theme.shape.borderRadius,
-    boxShadow: theme.shadows[3],
-  },
   root: {
     display: 'grid',
     gridTemplateColumns: `repeat(12, 1fr)`,
@@ -43,6 +36,10 @@ const useStyles = makeStyles((theme: MTheme) => ({
     },
   },
   infoBlock: {
+    '& .MuiTypography-subtitle1': {
+      fontSize: theme.spacing(3),
+      lineHeight: theme.spacing(6),
+    },
     gridColumn: '1 / span 4',
     gridRow: '1 / span 2',
     paddingLeft: theme.spacing(16),
@@ -98,7 +95,6 @@ const useStyles = makeStyles((theme: MTheme) => ({
 
 const ProcessPageMainSection = () => {
   const classes = useStyles()
-  const { navigate } = useNavigation('consultation-form')
 
   return (
     <React.Fragment>
@@ -115,14 +111,6 @@ const ProcessPageMainSection = () => {
                 design your product, and then build it through our collaborative
                 and fully transparent app and software development process.
               </TextBlockWithHeader>
-            </Box>
-            <Box paddingBottom={{ xs: 3, lg: 6 }}>
-              <MButton color="primary" variant="contained" onClick={navigate}>
-                Free consultation
-              </MButton>
-            </Box>
-            <Box className={classes.starCardBox}>
-              <FiveStarCard />
             </Box>
           </Box>
         </Grid>
