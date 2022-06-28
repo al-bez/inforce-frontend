@@ -56,6 +56,10 @@ const links: ILinks = {
       src: url + '/shared/tempoContainer.png',
       src_pixel: url + '/shared/tempoContainer-pixel.png',
     },
+    // upload to s3 first
+    // succsessRequest: {
+    //   src: url + '/shared/',
+    // },
   },
   notFound: {
     error404: {
