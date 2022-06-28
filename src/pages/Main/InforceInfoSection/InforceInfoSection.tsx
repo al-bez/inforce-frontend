@@ -41,8 +41,6 @@ const InforceInfoSection = () => {
     {
       primaryText: 'fast',
       secondaryText: t('main.strategy.fast'),
-      buttonText: 'What we do?',
-      link: '/about-us',
       icon: <RocketIcon />,
     },
     {
