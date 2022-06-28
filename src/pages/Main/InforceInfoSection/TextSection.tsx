@@ -30,11 +30,16 @@ const useStyles = makeStyles((theme: MTheme) => ({
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'start',
+      '& .css-1isemmb': {
+        marginLeft: 0,
+      },
 
       '& > .MuiAvatar-root': {
         marginBottom: theme.spacing(2),
       },
-      '& > div > p.MuiTypography-root': { ...theme.typography.subtitle1 },
+      '& > div > p.MuiTypography-root': {
+        ...theme.typography.subtitle1,
+      },
     },
     '& .MuiButton-root': {
       marginTop: theme.spacing(4),
