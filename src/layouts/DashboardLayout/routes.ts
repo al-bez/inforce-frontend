@@ -6,7 +6,7 @@ import Case from '../../pages/Case/CaseView'
 import Services from '../../pages/Services/ServicesView'
 import Process from '../../pages/Process/ProcessView'
 import AboutUs from '../../pages/AboutUs/AboutUsView'
-
+import ThankYou from '../../pages/ThankYou/ThankYouView'
 export const routes = [
   {
     path: '/',
@@ -38,6 +38,10 @@ export const routes = [
     path: '/about-us',
     component: AboutUs,
     primary: true,
+  },
+  {
+    path: '/thank-you',
+    component: ThankYou,
   },
   {
     path: '',

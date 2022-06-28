@@ -22,6 +22,7 @@ import { useActions, useLocalStorage } from 'hooks'
 import { MTheme } from 'theme'
 import { EMAIL_PATTERN, PHONE_PATTERN } from './utils'
 import 'react-phone-input-2/lib/style.css'
+import { useHistory } from 'react-router-dom'
 
 // move to i18 later
 enum Placeholders {
@@ -97,6 +98,7 @@ const FormSection = () => {
     useLocalStorage<ILocalization>('localization')
   const { enqueueSnackbar } = useActions()
   const { t } = useTranslation()
+  const history = useHistory()
 
   const {
     handleSubmit,
@@ -119,9 +121,8 @@ const FormSection = () => {
         message: `Thank you ${data.data.name}! Our company will contact you in a couple of days.`,
         variant: 'success',
       }
-
-      enqueueSnackbar(notification)
       reset()
+      history.push('/thank-you')
     } catch (err) {
       const notification: Omit<ISnackbarNotification, 'key'> = {
         message:
