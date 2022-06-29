@@ -6,6 +6,7 @@ import Case from '../../pages/Case/CaseView'
 import Services from '../../pages/Services/ServicesView'
 import Process from '../../pages/Process/ProcessView'
 import AboutUs from '../../pages/AboutUs/AboutUsView'
+import PrivacyPolicy from '../../pages/PrivacyPolicy/PrivacyPolicyView'
 
 export const routes = [
   {
@@ -35,10 +36,15 @@ export const routes = [
     component: Process,
   },
   {
+    path: '/privacy-policy',
+    component: PrivacyPolicy,
+  },
+  {
     path: '/about-us',
     component: AboutUs,
     primary: true,
   },
+
   {
     path: '',
     component: Error404,
