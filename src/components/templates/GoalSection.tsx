@@ -34,6 +34,9 @@ const GoalSection = (): JSX.Element => {
   const classes = useStyles()
   const { navigate } = useNavigation('consultation-form')
 
+  const testNavigate = useNavigation('test111')
+  console.log(testNavigate)
+
   return (
     <WrapperWithBorder
       sx={{

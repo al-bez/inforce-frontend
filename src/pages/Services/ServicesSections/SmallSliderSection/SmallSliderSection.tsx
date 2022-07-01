@@ -267,7 +267,6 @@ const useStyles = makeStyles((theme: MTheme) => ({
 const SmallSliderSection = () => {
   const classes = useStyles()
   const { navigate } = useNavigation('consultation-form')
-
   return (
     <React.Fragment>
       <GhostHeaderBox />
@@ -275,9 +274,6 @@ const SmallSliderSection = () => {
         <Box className={classes.wrapper}>
           <Box className={classes.text}>
             <Box sx={{ position: 'relative' }}>
-              <Box className={classes.fiveStarCardBox}>
-                <FiveStarCard />
-              </Box>
               <TextBlockWithHeader
                 header="Our Services"
                 subHeader="Inforce"

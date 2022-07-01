@@ -4,6 +4,7 @@ import { MTheme } from 'theme'
 import { pxToRem } from 'theme/utils/formatFontSize'
 import sectionImage from '../../assets/images/section.svg'
 import sectionSelectedImage from '../../assets/images/sectionSelected.svg'
+import { SetStateAction } from 'react'
 
 const defaultOptions = [
   'Planning',
@@ -367,14 +368,28 @@ const useStyles = makeStyles((theme: MTheme) => ({
 
 interface ICustomDonut {
   options?: string[]
+  setActiveImage?: React.Dispatch<SetStateAction<number>>
 }
 
-function CustomDonut({ options = defaultOptions }: ICustomDonut): JSX.Element {
+function CustomDonut({
+  options = defaultOptions,
+  setActiveImage,
+}: ICustomDonut): JSX.Element {
   const classes = useStyles()
   return (
     <Box className={classes.root}>
       {options.map((option, idx) => (
-        <Box key={idx} className={classes.section}>
+        <Box
+          key={idx}
+          className={classes.section}
+          onClick={
+            setActiveImage
+              ? () => setActiveImage(idx)
+              : () => {
+                  return 0
+                }
+          }
+        >
           <Box>
             <Box className={classes.textBlock}>
               <Typography className={classes.number}>{idx + 1}</Typography>

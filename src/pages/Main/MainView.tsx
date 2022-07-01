@@ -10,7 +10,7 @@ import {
   FormSection,
 } from '@templates'
 import { MCircularProgress } from '@atoms'
-import { PaddingBox } from '@molecules'
+import { CookiePolicy, PaddingBox } from '@molecules'
 import { useProjectsFetcher, useProjectsClear } from 'hooks'
 import { StatusTypes } from 'types'
 
@@ -43,6 +43,7 @@ const MainView = () => {
         <SliderSection cards={projects} />
       )}
       <FormSection />
+      <CookiePolicy />
     </React.Fragment>
   )
 }

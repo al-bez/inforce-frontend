@@ -73,9 +73,7 @@ const MCardWithAction = ({ card }: IMCardWithAction) => {
         >
           {card.text}
         </Typography>
-        <Typography variant="subtitle1" className={classes.action}>
-          <Link to="/about-us">{card.btnText}</Link>
-        </Typography>
+        <Typography variant="subtitle1" className={classes.action}></Typography>
       </Box>
     </Box>
   )

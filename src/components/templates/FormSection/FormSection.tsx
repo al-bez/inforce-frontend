@@ -3,6 +3,8 @@ import { makeStyles } from '@mui/styles'
 import { Box } from '@mui/material'
 import { useForm, Controller, SubmitHandler } from 'react-hook-form'
 import { MButton, MCircularProgress } from '@atoms'
+//@ts-ignore
+import { ReactCountryDropdown } from 'react-country-dropdown'
 import {
   PhoneInput,
   InputWithLabel,
@@ -93,8 +95,7 @@ const useStyles = makeStyles((theme: MTheme) => ({
 
 const FormSection = () => {
   const classes = useStyles()
-  const [localizationData, setLocalizationData] =
-    useLocalStorage<ILocalization>('localization')
+  const [localizationData, setLocalizationData] = useLocalStorage<string>('pl')
   const { enqueueSnackbar } = useActions()
   const { t } = useTranslation()
 
@@ -133,18 +134,18 @@ const FormSection = () => {
     }
   }
 
+  const handleSelect = (country: any) => console.log(country)
+  const getLocalCountry = async () => {
+    const { country } = await fetch(
+      'https://ipinfo.io/json?token=1621d1252efc15'
+    )
+      .then((res) => res.json())
+      .then((res) => res)
+    setLocalizationData(country.toLowerCase())
+  }
   React.useEffect(() => {
-    if (!localizationData) {
-      localizationService.fetchLocalizationData<ILocalization>().then(
-        (res) => {
-          setLocalizationData(res.data)
-        },
-        () => {
-          return
-        }
-      )
-    }
-  }, [localizationData])
+    getLocalCountry()
+  }, [])
 
   return (
     <PaddingBox id="consultation-form">
@@ -156,7 +157,7 @@ const FormSection = () => {
         <TextBlockWithHeader
           header="Let’s talk about your next big idea"
           subHeader="Got a project in mind?"
-          sx={{ maxWidth: 538 }}
+          sx={{ maxWidth: 450 }}
         >
           {t('form.desc')}
         </TextBlockWithHeader>
@@ -200,9 +201,7 @@ const FormSection = () => {
                   type="tel"
                   {...rest}
                 >
-                  <PhoneInput
-                    country={localizationData?.country_code?.toLowerCase()}
-                  />
+                  <PhoneInput country={localizationData} />
                 </InputWithLabel>
               )}
             />
